@@ -1,0 +1,36 @@
+
+public abstract class Player {
+
+	//Variables
+	public String name;
+	public String value;
+	
+	//Constructor
+	public Player() {}
+	
+	//Set Name 
+	public void setName(String name) {
+    
+		this.name = name;
+	}
+	
+	//Get Name
+	public String getName() {
+		
+		return name;
+	}
+	
+	//Set Value
+	public void setValue(String value) {
+		
+		this.value = value;
+	}
+	
+	//Get Value
+	public String getValue() {
+		
+		return value;
+	}
+	
+	public abstract Roshambo generateRoshambo();
+}
