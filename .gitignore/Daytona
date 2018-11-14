@@ -1,0 +1,31 @@
+import java.util.Random;
+
+
+public class Daytona extends Player {
+
+	//Constructor
+	public Daytona() {
+		
+		name = "Daytona";
+	}
+	
+	@Override
+	public Roshambo generateRoshambo() {
+		// TODO Auto-generated method stub
+		
+		Random r = new Random();
+		int ch =r.nextInt(3);
+		
+		//Choose Rock, Paper, Scissors
+		if(ch==0) {
+			return Roshambo.ROCK;
+		} else if (ch==1) {
+			return Roshambo.PAPER;
+		} else {
+			return Roshambo.SCISSORS;
+		}
+		
+	}
+
+	
+}
