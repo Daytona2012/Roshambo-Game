@@ -1,0 +1,16 @@
+
+public class Joel extends Player {
+
+	//Constructor
+	public Joel() {
+	 
+		name = "Joel";
+	}
+	
+	@Override
+	public Roshambo generateRoshambo() {
+		// TODO Auto-generated method stub
+		return Roshambo.ROCK;
+	}
+
+}
