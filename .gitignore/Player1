@@ -1,0 +1,17 @@
+
+public class Player1 extends Player {
+	
+	//Constructor
+	public Player1(){
+	super();
+	
+	}
+
+	@Override
+	public Roshambo generateRoshambo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}
