@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+public class RoshamboApp {
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Variables
+		Scanner sc = new Scanner(System.in);
+		String choice = "y";
+		char player;
+		Player p = null;
+		String name;
+		
+		//Create 2 player objects
+		Joel j = new Joel();
+		Daytona d = new Daytona();
+		System.out.print("Welcome to the game of Roshambo.\n");
+		
+		//input name
+		name = Console.get_String("Enter your name: ");
+	
+		String playerChoice = Console.get_String("Would you like to play Joel or Daytona?(J/D): ");
+		
+		player = playerChoice.charAt(0);
+		
+		//set name
+		if(player=='j' || player == 'J') {
+			p=j;
+			
+		} else if(player=='d' || player== 'D') {
+			p=d;
+			
+		}
+		
+		p.setName(playerChoice);
+            
+		
+            //Repeating loop with character variable choice 
+            while(choice.compareTo("y")==0) {
+            	System.out.print("Rock, paper, or scissors?(R/P/S)");
+            	String rps = sc.next();
+            	
+            	Player1 p1 = new Player1();
+            	p1.setName(name);
+            	p1.setValue(rps);
+            	
+            	if(rps.charAt(0)=='r'||rps.charAt(0)=='R') {
+            		rps = "Rock";
+            	} else if(rps.charAt(0)=='p'||rps.charAt(0)=='P') {
+            		rps = "Paper";
+            	} else if (rps.charAt(0)=='s'||rps.charAt(0)=='S') {
+            		rps = "Scissors";
+            	}
+            	
+            	System.out.println(name + " : " + rps);
+            	
+                String roshambo = p.generateRoshambo().toString();
+                System.out.println(p.getName() + " : " + roshambo);
+                
+                if(Character.toUpperCase(rps.charAt(0))== roshambo.charAt(0)) {
+                	System.out.println("Draw!");
+                } else if(rps.equals("Paper") && roshambo.equals("Rock")) {
+                	System.out.println(p1.getName() + " Win!");
+                } else if(roshambo.equals("Paper")&& rps.equals("Rock")) {
+                	System.out.println(p.getName() + " Win!");
+                } else if(rps.equals("Paper")&& roshambo.equals("Scissors")) {
+                	System.out.println(p.getName() + " Win!");
+                } else if(roshambo.equals("Paper")&& rps.equals("Scissors")) {
+                	System.out.println(p1.getName() + " Win!");
+                } else if(rps.equals("Scissors")&& roshambo.equals("Rock")) {
+                	System.out.println(p.getName() + " Win!");
+                } else if(roshambo.equals("Scissors")&& rps.equals("Rock")) {
+                	System.out.println(p1.getName() + " Win!");
+                }
+                
+                choice = Console.getString("Play Again?(y/n): ");
+                
+            }
+     
+	}
+
+}
